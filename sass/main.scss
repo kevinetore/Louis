@@ -1,0 +1,44 @@
+$main_font: "helvetica neue";
+
+body {
+  background-image:url('../background_images/wil-stewart-18242.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  font-family: $main_font;
+  a.copyright_image {
+    color: lightgrey;
+    text-decoration: none;
+  }
+  #main {
+    width: 760px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    .current_time {
+      color: white;
+      font-weight: 700;
+      font-size: 12em;
+      text-align: center;
+    }
+    .main_welcome {
+      color: white;
+      font-weight: 400;
+      font-size: 5.5em;
+      text-align: center;
+    }
+  }
+  #quote {
+    p {
+      color: white;
+      position: absolute;;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
