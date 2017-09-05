@@ -30,6 +30,18 @@ body {
       font-size: 5.5em;
       text-align: center;
     }
+    input#yourname {
+      border: 0;
+      background: transparent;
+      border-bottom: 1.5px solid white;
+      width: 30%;
+      font-size: 60px;
+      color: white;
+      font-weight: 400;
+    }
+    *:focus {
+      outline:none !important
+    }
   }
   #quote {
     p {

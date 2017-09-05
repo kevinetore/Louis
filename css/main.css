@@ -26,6 +26,16 @@ body {
       font-weight: 400;
       font-size: 5.5em;
       text-align: center; }
+    body #main input#yourname {
+      border: 0;
+      background: transparent;
+      border-bottom: 1.5px solid white;
+      width: 30%;
+      font-size: 60px;
+      color: white;
+      font-weight: 400; }
+    body #main *:focus {
+      outline: none !important; }
   body #quote p {
     color: white;
     position: absolute;
