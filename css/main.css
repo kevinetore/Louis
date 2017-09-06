@@ -9,7 +9,7 @@ body {
     color: lightgrey;
     text-decoration: none; }
   body #main {
-    width: 760px;
+    width: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -26,14 +26,17 @@ body {
       font-weight: 400;
       font-size: 5.5em;
       text-align: center; }
-    body #main input#yourname {
+    body #main input#first_name {
       border: 0;
       background: transparent;
       border-bottom: 1.5px solid white;
-      width: 30%;
+      width: 20%;
       font-size: 60px;
       color: white;
-      font-weight: 400; }
+      font-weight: 400;
+      text-transform: capitalize; }
+    body #main span#name {
+      text-transform: capitalize; }
     body #main *:focus {
       outline: none !important; }
   body #quote p {

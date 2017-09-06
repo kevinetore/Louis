@@ -12,7 +12,7 @@ body {
     text-decoration: none;
   }
   #main {
-    width: 760px;
+    width: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -30,14 +30,18 @@ body {
       font-size: 5.5em;
       text-align: center;
     }
-    input#yourname {
+    input#first_name {
       border: 0;
       background: transparent;
       border-bottom: 1.5px solid white;
-      width: 30%;
+      width: 20%;
       font-size: 60px;
       color: white;
       font-weight: 400;
+      text-transform: capitalize;
+    }
+    span#name {
+      text-transform: capitalize;
     }
     *:focus {
       outline:none !important

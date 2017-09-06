@@ -1,15 +1,50 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _jsCookie = require('js-cookie');
+var _jsCookie = require("js-cookie");
 
 var Cookies = _interopRequireWildcard(_jsCookie);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-Cookies.set('name', 'etore', { expires: 7 });
-var data = Cookies.get('name');
-console.log(data);
+$(document).ready(function () {
+  //Cookies.remove('name');
+  var data = Cookies.get('name');
+  if (data == undefined) {
+    $("#first_name").keyup(function () {
+      var value = $(this).val();
+      if (value != undefined) {
+        clicked();
+        pressed();
+      };
+    });
+  } else {
+    $("#name").html(data);
+    $("#first_name").hide();
+  };
+});
+
+var clicked = function clicked() {
+  document.onclick = function (e) {
+    if (e.target.id != 'first_name') {
+      var value = $('#first_name').val();
+      Cookies.set('name', value, { expires: 7 });
+      $("#name").html(value);
+      $("#first_name").hide();
+    };
+  };
+};
+
+var pressed = function pressed() {
+  $('#first_name').keyup(function (e) {
+    if (e.keyCode === 13) {
+      var value = $('#first_name').val();
+      Cookies.set('name', value, { expires: 7 });
+      $("#name").html(value);
+      $("#first_name").hide();
+    };
+  });
+};
 "use strict";
 
 setInterval(current_time, 1000);
