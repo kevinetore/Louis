@@ -1,52 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
-var _jsCookie = require("js-cookie");
-
-var Cookies = _interopRequireWildcard(_jsCookie);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-$(document).ready(function () {
-  //Cookies.remove('name');
-  var data = Cookies.get('name');
-  if (data == undefined) {
-    $("#first_name").keyup(function () {
-      var value = $(this).val();
-      if (value != undefined) {
-        clicked();
-        pressed();
-      };
-    });
-  } else {
-    $("#name").html(data);
-    $("#first_name").hide();
-  };
-});
-
-var clicked = function clicked() {
-  document.onclick = function (e) {
-    if (e.target.id != 'first_name') {
-      var value = $('#first_name').val();
-      Cookies.set('name', value, { expires: 7 });
-      $("#name").html(value);
-      $("#first_name").hide();
-    };
-  };
-};
-
-var pressed = function pressed() {
-  $('#first_name').keyup(function (e) {
-    if (e.keyCode === 13) {
-      var value = $('#first_name').val();
-      Cookies.set('name', value, { expires: 7 });
-      $("#name").html(value);
-      $("#first_name").hide();
-    };
-  });
-};
-"use strict";
-
 setInterval(current_time, 1000);
 
 function current_time() {
@@ -66,6 +20,67 @@ window.onload = function part_of_day() {
   if (part >= 18 || part < 6) {
     $("#part_of_day").html("evening");
   }
+};
+"use strict";
+
+$(document).ready(function () {
+  var quotes = ["Any product that needs a manual is broken. - Elon Musk"];
+
+  $("#quote").html('<p>' + quotes[0] + '</p>');
+});
+'use strict';
+
+var _jsCookie = require('js-cookie');
+
+var Cookies = _interopRequireWildcard(_jsCookie);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+$(document).ready(function () {
+  // Cookies.remove('name');
+  var cookie = Cookies.get('name');
+  console.log(cookie);
+  if (cookie == undefined) {
+    $('#current_time').hide();
+    $('.cookie_content').hide();
+    $('.content').html("What's your name?");
+    $("#first_name").keyup(function () {
+      var value = $(this).val();
+      if (value != undefined) {
+        clicked();
+        pressed();
+      };
+    });
+  } else {
+    $("#name").html(cookie);
+    $("#first_name").hide();
+  };
+});
+
+var clicked = function clicked() {
+  document.onclick = function (e) {
+    if (e.target.id != 'first_name') {
+      hideAndSeek();
+    };
+  };
+};
+
+var pressed = function pressed() {
+  $('#first_name').keyup(function (e) {
+    if (e.keyCode === 13) {
+      hideAndSeek();
+    };
+  });
+};
+
+var hideAndSeek = function hideAndSeek() {
+  var value = $('#first_name').val();
+  Cookies.set('name', value, { expires: 7 });
+  $("#name").html(value);
+  $(".content").hide();
+  $("#first_name").hide();
+  $('.cookie_content').show();
+  $('#current_time').show();
 };
 
 },{"js-cookie":2}],2:[function(require,module,exports){

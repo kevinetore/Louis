@@ -12,12 +12,17 @@ body {
     text-decoration: none;
   }
   #main {
-    width: 100%;
+    width: 70%;
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -100%);
     transform: translate(-50%, -100%);
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
     .current_time {
       color: white;
       font-weight: 700;
@@ -29,22 +34,25 @@ body {
       font-weight: 400;
       font-size: 5.5em;
       text-align: center;
-    }
-    input#first_name {
-      border: 0;
-      background: transparent;
-      border-bottom: 1.5px solid white;
-      width: 20%;
-      font-size: 60px;
-      color: white;
-      font-weight: 400;
-      text-transform: capitalize;
-    }
-    span#name {
-      text-transform: capitalize;
-    }
-    *:focus {
-      outline:none !important
+      .content {
+        float: left;
+      }
+      input#first_name {
+        border: 0;
+        background: transparent;
+        border-bottom: 1.5px solid white;
+        width: 40%;
+        font-size: 60px;
+        color: white;
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+      span#name {
+        text-transform: capitalize;
+      }
+      *:focus {
+        outline:none !important
+      }
     }
   }
   #quote {
@@ -56,5 +64,14 @@ body {
       width: 100%;
       text-align: center;
     }
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
