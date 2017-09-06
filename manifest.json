@@ -12,16 +12,5 @@
   },
   "icons": {
     "128":"icon.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["js/cookie.js"]
-    }
-  ],
-  "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*"
-  ]
+  }
 }
