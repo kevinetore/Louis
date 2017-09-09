@@ -1,43 +1,63 @@
 $main_font: "helvetica neue";
 
-body {
-  background-image:url('../background_images/wil-stewart-18242.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  font-family: $main_font;
-  a.copyright_image {
-    color: lightgrey;
-    text-decoration: none;
-  }
-  #main {
-    width: 70%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -100%);
-    transform: translate(-50%, -100%);
-    opacity: 1;
-    animation-name: fadeInOpacity;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    .current_time {
-      color: white;
-      font-weight: 700;
-      font-size: 12em;
-      text-align: center;
+html {
+  body {
+    background-image:url('../background_images/wil-stewart-18242.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    font-family: $main_font;
+    a.copyright_image {
+      color: lightgrey;
+      text-decoration: none;
     }
-    .main_welcome {
-      color: white;
-      font-weight: 400;
-      font-size: 5.5em;
-      text-align: center;
-      .content {
-        float: left;
+    #main {
+      width: 70%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%);
+      opacity: 1;
+      animation-name: fadeInOpacity;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in;
+      animation-duration: 2s;
+      .current_time {
+        color: white;
+        font-weight: 700;
+        font-size: 12em;
+        text-align: center;
       }
-      input#first_name {
+      .main_welcome {
+        color: white;
+        font-weight: 400;
+        font-size: 5.5em;
+        text-align: center;
+        .cookie_content {
+          .cookie_welcome {
+          }
+          .focus_today {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin: 10% auto auto auto;
+            p {
+              font-size: 0.4em;
+              input {
+                font-size: 1em;
+                width: 30%;
+              }
+            }
+          }
+        }
+        .content {
+          float: left;
+        }
+      }
+      input {
         border: 0;
         background: transparent;
         border-bottom: 1.5px solid white;
@@ -47,22 +67,25 @@ body {
         font-weight: 400;
         text-transform: capitalize;
       }
-      span#name {
+      span {
         text-transform: capitalize;
       }
       *:focus {
-        outline:none !important
+        outline:none !important;
       }
     }
-  }
-  #quote {
-    p {
+    #quote {
       color: white;
       position: absolute;;
       text-align: center;
       bottom: 0;
       width: 100%;
       text-align: center;
+    }
+    #quote:hover {
+      p {
+        margin-bottom: 40px;
+      }
     }
   }
 }

@@ -43,16 +43,18 @@ $(document).ready(function () {
     $('#current_time').hide();
     $('.cookie_content').hide();
     $('.content').html("What's your name?");
-    $("#first_name").keyup(function () {
+    $('#first_name').keyup(function () {
       var value = $(this).val();
+      console.log(value);
       if (value != undefined) {
         clicked();
         pressed();
       };
     });
   } else {
-    $("#name").html(cookie);
-    $("#first_name").hide();
+    $('#name').html(cookie);
+    $('.content').hide();
+    $('#first_name').hide();
   };
 });
 
@@ -75,9 +77,9 @@ var pressed = function pressed() {
 var hideAndSeek = function hideAndSeek() {
   var value = $('#first_name').val();
   Cookies.set('name', value, { expires: 7 });
-  $("#name").html(value);
-  $(".content").hide();
-  $("#first_name").hide();
+  $('#name').html(value);
+  $('.content').hide();
+  $('#first_name').hide();
   $('.cookie_content').show();
   $('#current_time').show();
 };
