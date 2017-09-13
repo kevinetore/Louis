@@ -1,91 +1,107 @@
 $main_font: "helvetica neue";
 
-html {
-  body {
-    background-image:url('../background_images/wil-stewart-18242.jpg');
-    background-repeat: no-repeat;
+body {
+  font-family: $main_font;
+  margin: 0;
+  #bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+  }
+  #bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
     background-size: cover;
-    width: 100%;
-    height: 100%;
-    font-family: $main_font;
-    a.copyright_image {
-      color: lightgrey;
-      text-decoration: none;
+  }
+  a.copyright_image {
+    padding: 10px;
+    position: fixed;
+    color: lightgrey;
+    text-decoration: none;
+  }
+  #main {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    .current_time {
+      color: white;
+      font-weight: 700;
+      font-size: 12em;
+      text-align: center;
     }
-    #main {
-      width: 70%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -100%);
-      transform: translate(-50%, -100%);
-      opacity: 1;
-      animation-name: fadeInOpacity;
-      animation-iteration-count: 1;
-      animation-timing-function: ease-in;
-      animation-duration: 2s;
-      .current_time {
-        color: white;
-        font-weight: 700;
-        font-size: 12em;
-        text-align: center;
-      }
-      .main_welcome {
-        color: white;
-        font-weight: 400;
-        font-size: 5.5em;
-        text-align: center;
-        .cookie_content {
-          .cookie_welcome {
-          }
-          .focus_today {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin-left: auto;
-            margin: 10% auto auto auto;
-            p {
-              font-size: 0.4em;
-              input {
-                font-size: 1em;
-                width: 30%;
-              }
+    .main_welcome {
+      color: white;
+      font-weight: 400;
+      font-size: 5.5em;
+      text-align: center;
+      .cookie_content {
+        .cookie_welcome {
+        }
+        .focus_today {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin: 10% auto auto auto;
+          p {
+            font-size: 0.4em;
+            input {
+              font-size: 1em;
+              width: 30%;
             }
           }
         }
-        .content {
-          float: left;
-        }
       }
-      input {
-        border: 0;
-        background: transparent;
-        border-bottom: 1.5px solid white;
-        width: 40%;
-        font-size: 60px;
-        color: white;
-        font-weight: 400;
-        text-transform: capitalize;
-      }
-      span {
-        text-transform: capitalize;
-      }
-      *:focus {
-        outline:none !important;
+      .content {
+        float: left;
       }
     }
-    #quote {
+    input {
+      border: 0;
+      background: transparent;
+      border-bottom: 1.5px solid white;
+      width: 40%;
+      font-size: 60px;
       color: white;
-      position: absolute;;
-      text-align: center;
-      bottom: 0;
-      width: 100%;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+    span {
+      text-transform: capitalize;
+    }
+    *:focus {
+      outline:none !important;
+    }
+  }
+  #quote {
+    color: white;
+    position: absolute;;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    p {
       text-align: center;
     }
-    #quote:hover {
-      p {
-        margin-bottom: 40px;
-      }
+  }
+  #quote:hover {
+    p {
+      margin-bottom: 40px;
     }
   }
 }

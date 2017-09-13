@@ -1,14 +1,28 @@
-html body {
-  background-image: url("../background_images/wil-stewart-18242.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  font-family: "helvetica neue"; }
-  html body a.copyright_image {
+body {
+  font-family: "helvetica neue";
+  margin: 0; }
+  body #bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%; }
+  body #bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    background-size: cover; }
+  body a.copyright_image {
+    padding: 10px;
+    position: fixed;
     color: lightgrey;
     text-decoration: none; }
-  html body #main {
+  body #main {
     width: 70%;
     position: absolute;
     left: 50%;
@@ -25,30 +39,30 @@ html body {
     animation-timing-function: ease-in;
     -webkit-animation-duration: 2s;
     animation-duration: 2s; }
-    html body #main .current_time {
+    body #main .current_time {
       color: white;
       font-weight: 700;
       font-size: 12em;
       text-align: center; }
-    html body #main .main_welcome {
+    body #main .main_welcome {
       color: white;
       font-weight: 400;
       font-size: 5.5em;
       text-align: center; }
-      html body #main .main_welcome .cookie_content .focus_today {
+      body #main .main_welcome .cookie_content .focus_today {
         position: absolute;
         left: 0;
         right: 0;
         margin-left: auto;
         margin: 10% auto auto auto; }
-        html body #main .main_welcome .cookie_content .focus_today p {
+        body #main .main_welcome .cookie_content .focus_today p {
           font-size: 0.4em; }
-          html body #main .main_welcome .cookie_content .focus_today p input {
+          body #main .main_welcome .cookie_content .focus_today p input {
             font-size: 1em;
             width: 30%; }
-      html body #main .main_welcome .content {
+      body #main .main_welcome .content {
         float: left; }
-    html body #main input {
+    body #main input {
       border: 0;
       background: transparent;
       border-bottom: 1.5px solid white;
@@ -57,18 +71,19 @@ html body {
       color: white;
       font-weight: 400;
       text-transform: capitalize; }
-    html body #main span {
+    body #main span {
       text-transform: capitalize; }
-    html body #main *:focus {
+    body #main *:focus {
       outline: none !important; }
-  html body #quote {
+  body #quote {
     color: white;
     position: absolute;
-    text-align: center;
     bottom: 0;
     width: 100%;
-    text-align: center; }
-  html body #quote:hover p {
+    margin: 0 auto; }
+    body #quote p {
+      text-align: center; }
+  body #quote:hover p {
     margin-bottom: 40px; }
 
 @-webkit-keyframes fadeInOpacity {
