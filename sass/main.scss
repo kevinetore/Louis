@@ -67,6 +67,10 @@ body {
             }
           }
         }
+        .your_focus {
+          font-size: 0.4em;
+          text-transform: capitalize;
+        }
       }
       .content {
         float: left;
@@ -98,12 +102,14 @@ body {
     p {
       text-align: center;
     }
-  }
-  #quote:hover {
-    p {
-      margin-bottom: 40px;
+    #quote:hover #quote_owner {
+      display: block;
+    }
+    #quote_owner {
+      display: none;
     }
   }
+
 }
 
 @keyframes fadeInOpacity {

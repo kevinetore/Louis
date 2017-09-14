@@ -60,6 +60,9 @@ body {
           body #main .main_welcome .cookie_content .focus_today p input {
             font-size: 1em;
             width: 30%; }
+      body #main .main_welcome .cookie_content .your_focus {
+        font-size: 0.4em;
+        text-transform: capitalize; }
       body #main .main_welcome .content {
         float: left; }
     body #main input {
@@ -83,8 +86,10 @@ body {
     margin: 0 auto; }
     body #quote p {
       text-align: center; }
-  body #quote:hover p {
-    margin-bottom: 40px; }
+    body #quote #quote:hover #quote_owner {
+      display: block; }
+    body #quote #quote_owner {
+      display: none; }
 
 @-webkit-keyframes fadeInOpacity {
   0% {
