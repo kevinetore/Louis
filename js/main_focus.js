@@ -1,27 +1,50 @@
 import * as Cookies from "js-cookie";
 
 $(document).ready(function() {
-  // Cookies.remove('focus');
-  var cookie = Cookies.get('focus');
-  if (cookie != undefined) {
-    setData();
-  } else {
-    $('#main_focus').keyup(function() {
-      var value = $(this).val();
-      if (value != undefined) {
-        document.onclick = function(e) {
-          if(e.target.id != 'main_focus') {
-            Cookies.set('focus', value, { expires: 1 });
-            setData();
+  var settingUp = function() {
+    var cookie = Cookies.get('focus');
+    // showing the focus if it's defined
+    if (cookie != undefined) {
+      var cookie = Cookies.get('focus');
+      $('#set_focus').hide();
+      $('.your_focus').html(cookie);
+    } else {
+      // user should define it's focus
+      $('#main_focus').keyup(function(e) {
+        var value = $(this).val();
+        if (value != undefined) {
+          if(e.keyCode === 13){
+            setCookie();
           };
+          document.addEventListener("click", function(e){
+            if(e.target.id != 'main_focus') {
+              setCookie();
+            };
+          });
         };
+      });
+    };
+
+    var setCookie = function() {
+      var value = $('#main_focus').val();
+      if (value != undefined) {
+        Cookies.set('focus', value, { expires: 1 });
+        var cookie = Cookies.get('focus');
+        $('#set_focus').hide();
+        $('.your_focus').html(cookie);
+        $('.your_focus').show();
+      };
+    };
+
+    document.addEventListener("click", function(target){
+      if(target.target.id == 'your_focus') {
+        Cookies.remove('focus');
+        $('#set_focus').show();
+        $('#your_focus').hide();
+        settingUp();
       };
     });
   };
-});
 
-var setData = function() {
-  var cookie = Cookies.get('focus');
-  $('#set_focus').hide();
-  $('.your_focus').html(cookie);
-};
+  settingUp();
+});

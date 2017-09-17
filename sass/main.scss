@@ -70,6 +70,12 @@ body {
         .your_focus {
           font-size: 0.4em;
           text-transform: capitalize;
+          span {
+            font-size: 0.35em;
+          }
+        }
+        .your_focus:hover {
+          text-decoration: line-through;
         }
       }
       .content {
@@ -91,22 +97,6 @@ body {
     }
     *:focus {
       outline:none !important;
-    }
-  }
-  #quote {
-    color: white;
-    position: absolute;;
-    bottom: 0;
-    width: 100%;
-    margin: 0 auto;
-    p {
-      text-align: center;
-    }
-    #quote:hover #quote_owner {
-      display: block;
-    }
-    #quote_owner {
-      display: none;
     }
   }
 

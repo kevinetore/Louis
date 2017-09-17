@@ -4,7 +4,7 @@
   "description": "",
   "main": "js/main.js",
   "scripts": {
-    "babel": "babel --presets es2015 js/current_time.js js/quotes.js js/welcome_screen.js js/main_focus.js -o build/main.bundle.js"
+    "babel": "babel --presets es2015 js/current_time.js js/welcome_screen.js js/main_focus.js js/image_of_the_day.js -o build/main.bundle.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +13,10 @@
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "js-cookie": "^2.1.4"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "pretty-checkbox": "^2.2.1",
+    "underscore": "^1.8.3"
   }
 }

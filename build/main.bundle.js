@@ -20,17 +20,6 @@ window.onload = function part_of_day() {
     $("#part_of_day").html("evening");
   }
 };
-"use strict";
-
-$(document).ready(function () {
-  var quotes = ["Any product that needs a manual is broken."];
-  $("#quote").html('<p>' + quotes[0] + '</p>');
-  $("#quote").mouseenter(function () {
-    $(this).stop().animate({ marginBottom: '+=20px' }, 500);
-  }).mouseleave(function () {
-    $(this).stop().animate({ marginBottom: '0px' });
-  });
-});
 'use strict';
 
 var _jsCookie = require('js-cookie');
@@ -96,27 +85,67 @@ var Cookies = _interopRequireWildcard(_jsCookie);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 $(document).ready(function () {
-  // Cookies.remove('focus');
-  var cookie = Cookies.get('focus');
-  if (cookie != undefined) {
-    setData();
-  } else {
-    $('#main_focus').keyup(function () {
-      var value = $(this).val();
-      if (value != undefined) {
-        document.onclick = function (e) {
-          if (e.target.id != 'main_focus') {
-            Cookies.set('focus', value, { expires: 1 });
-            setData();
+  var settingUp = function settingUp() {
+    var cookie = Cookies.get('focus');
+    // showing the focus if it's defined
+    if (cookie != undefined) {
+      var cookie = Cookies.get('focus');
+      $('#set_focus').hide();
+      $('.your_focus').html(cookie);
+    } else {
+      // user should define it's focus
+      $('#main_focus').keyup(function (e) {
+        var value = $(this).val();
+        if (value != undefined) {
+          if (e.keyCode === 13) {
+            setCookie();
           };
+          document.addEventListener("click", function (e) {
+            if (e.target.id != 'main_focus') {
+              setCookie();
+            };
+          });
         };
+      });
+    };
+
+    var setCookie = function setCookie() {
+      var value = $('#main_focus').val();
+      if (value != undefined) {
+        Cookies.set('focus', value, { expires: 1 });
+        var cookie = Cookies.get('focus');
+        $('#set_focus').hide();
+        $('.your_focus').html(cookie);
+        $('.your_focus').show();
+      };
+    };
+
+    document.addEventListener("click", function (target) {
+      if (target.target.id == 'your_focus') {
+        Cookies.remove('focus');
+        $('#set_focus').show();
+        $('#your_focus').hide();
+        settingUp();
       };
     });
   };
-});
 
-var setData = function setData() {
-  var cookie = Cookies.get('focus');
-  $('#set_focus').hide();
-  $('.your_focus').html(cookie);
-};
+  settingUp();
+});
+'use strict';
+
+var _underscore = require('underscore');
+
+var _ = _interopRequireWildcard(_underscore);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+$(document).ready(function () {
+  var base_url = '../background_images/';
+  var images = [base_url + '/wil-stewart-18242.jpg', base_url + '/alecu-gabriel-331261.jpg', base_url + '/faye-cornish-76100.jpg', base_url + '/fre-sonneveld-17584.jpg', base_url + '/iqx-azmi-263873.jpg', base_url + '/nasa-45075.jpg', base_url + '/nathan-anderson-158540.jpg', base_url + '/rawpixel-com-274858.jpg', base_url + '/somin-khanna-14449.jpg'];
+  var bg = document.getElementById("bg_image");
+  function setBackground() {
+    bg.style.backgroundImage = "url(" + _.sample(images) + ")";
+  };
+  window.onload = setBackground();
+});
