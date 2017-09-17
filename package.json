@@ -15,8 +15,6 @@
     "js-cookie": "^2.1.4"
   },
   "dependencies": {
-    "fs": "0.0.1-security",
-    "pretty-checkbox": "^2.2.1",
     "underscore": "^1.8.3"
   }
 }
