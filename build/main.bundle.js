@@ -132,20 +132,16 @@ $(document).ready(function () {
 
   settingUp();
 });
-'use strict';
-
-var _underscore = require('underscore');
-
-var _ = _interopRequireWildcard(_underscore);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+"use strict";
 
 $(document).ready(function () {
-  var base_url = '../background_images/';
-  var images = [base_url + '/wil-stewart-18242.jpg', base_url + '/alecu-gabriel-331261.jpg', base_url + '/faye-cornish-76100.jpg', base_url + '/fre-sonneveld-17584.jpg', base_url + '/iqx-azmi-263873.jpg', base_url + '/nasa-45075.jpg', base_url + '/nathan-anderson-158540.jpg', base_url + '/rawpixel-com-274858.jpg', base_url + '/somin-khanna-14449.jpg'];
+  var base_url = '../background_images/bg';
+  var image = function image() {
+    return Math.floor(Math.random() * 16) + 1;
+  };
   var bg = document.getElementById("bg_image");
   function setBackground() {
-    bg.style.backgroundImage = "url(" + _.sample(images) + ")";
+    bg.style.backgroundImage = "url(" + base_url + image() + ".jpg)";
   };
   window.onload = setBackground();
 });
