@@ -7,7 +7,7 @@ $(document).ready(function() {
     if (cookie != undefined) {
       var cookie = Cookies.get('focus');
       $('#set_focus').hide();
-      $('.your_focus').html('<div>Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
+      $('.your_focus').html('<div id="today">Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
     } else {
       // user should define it's focus
       $('#main_focus').keyup(function(e) {
@@ -31,7 +31,7 @@ $(document).ready(function() {
         Cookies.set('focus', value, { expires: 1 });
         var cookie = Cookies.get('focus');
         $('#set_focus').hide();
-        $('.your_focus').html('<div>Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
+        $('.your_focus').html('<div id="today">Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
         $('.your_focus').show();
       };
     };

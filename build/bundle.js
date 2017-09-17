@@ -23,6 +23,17 @@ window.onload = function part_of_day() {
 };
 'use strict';
 
+$.ajax({
+  url: 'http://api.openweathermap.org/data/2.5/weather?q=enschede,nl&appid=584a8da601379289fbd35050a785e7ea&mode=json&units=metric',
+  type: 'GET',
+  success: function success(res) {
+    var data = res['main']['temp'];
+    var temp = ("" + data).split('.');
+    $('.weather').html("<img src='../images/cloud.png'>" + temp[0] + '˚');
+  }
+});
+'use strict';
+
 var _jsCookie = require('js-cookie');
 
 var Cookies = _interopRequireWildcard(_jsCookie);
@@ -92,7 +103,7 @@ $(document).ready(function () {
     if (cookie != undefined) {
       var cookie = Cookies.get('focus');
       $('#set_focus').hide();
-      $('.your_focus').html('<div>Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
+      $('.your_focus').html('<div id="today">Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
     } else {
       // user should define it's focus
       $('#main_focus').keyup(function (e) {
@@ -116,7 +127,7 @@ $(document).ready(function () {
         Cookies.set('focus', value, { expires: 1 });
         var cookie = Cookies.get('focus');
         $('#set_focus').hide();
-        $('.your_focus').html('<div>Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
+        $('.your_focus').html('<div id="today">Today</div>' + "<span id='today_cookie'>" + cookie + "</span>");
         $('.your_focus').show();
       };
     };

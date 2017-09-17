@@ -71,6 +71,9 @@ body {
         .your_focus {
           font-size: 0.4em;
           text-transform: capitalize;
+          #today {
+            text-transform: uppercase;
+          }
         }
         .your_focus span {
           color: lightyellow;
@@ -112,7 +115,18 @@ body {
     font-style: italic;
     opacity: .8;
   }
-
+  .weather {
+    color: white;
+    float: right;
+    font-size: 2.7em;
+    padding: 30px;
+    position: relative;
+    img {
+      position: absolute;
+      right: 80px;
+      top: 35px;
+    }
+  }
 }
 
 @keyframes fadeInOpacity {

@@ -65,6 +65,8 @@ body {
       body #main .main_welcome .cookie_content .your_focus {
         font-size: 0.4em;
         text-transform: capitalize; }
+        body #main .main_welcome .cookie_content .your_focus #today {
+          text-transform: uppercase; }
       body #main .main_welcome .cookie_content .your_focus span {
         color: lightyellow;
         font-size: 1em; }
@@ -95,6 +97,16 @@ body {
     letter-spacing: 1px;
     font-style: italic;
     opacity: .8; }
+  body .weather {
+    color: white;
+    float: right;
+    font-size: 2.7em;
+    padding: 30px;
+    position: relative; }
+    body .weather img {
+      position: absolute;
+      right: 80px;
+      top: 35px; }
 
 @-webkit-keyframes fadeInOpacity {
   0% {
