@@ -4,7 +4,7 @@
   "description": "",
   "main": "js/main.js",
   "scripts": {
-    "babel": "babel --presets es2015 js/current_time.js js/welcome_screen.js js/main_focus.js js/background.js -o build/main.bundle.js"
+    "babel": "babel --presets es2015 js/current_time.js js/welcome_screen.js js/main_focus.js js/background.js js/quotes.js -o build/main.bundle.js"
   },
   "author": "",
   "license": "ISC",

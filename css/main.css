@@ -85,6 +85,16 @@ body {
       text-transform: capitalize; }
     body #main *:focus {
       outline: none !important; }
+  body #quote {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-style: italic;
+    opacity: .8; }
 
 @-webkit-keyframes fadeInOpacity {
   0% {

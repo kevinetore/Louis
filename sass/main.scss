@@ -101,6 +101,17 @@ body {
       outline:none !important;
     }
   }
+  #quote {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-style: italic;
+    opacity: .8;
+  }
 
 }
 
