@@ -65,18 +65,18 @@ body {
             input {
               font-size: 1em;
               width: 30%;
-              border-color: yellow;
             }
           }
         }
         .your_focus {
           font-size: 0.4em;
           text-transform: capitalize;
-          span {
-            font-size: 0.35em;
-          }
         }
-        .your_focus:hover {
+        .your_focus span {
+          color: lightyellow;
+          font-size: 1em;
+        }
+        .your_focus span:hover {
           text-decoration: line-through;
         }
       }

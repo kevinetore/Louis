@@ -61,14 +61,14 @@ body {
           font-size: 0.4em; }
           body #main .main_welcome .cookie_content .focus_today p input {
             font-size: 1em;
-            width: 30%;
-            border-color: yellow; }
+            width: 30%; }
       body #main .main_welcome .cookie_content .your_focus {
         font-size: 0.4em;
         text-transform: capitalize; }
-        body #main .main_welcome .cookie_content .your_focus span {
-          font-size: 0.35em; }
-      body #main .main_welcome .cookie_content .your_focus:hover {
+      body #main .main_welcome .cookie_content .your_focus span {
+        color: lightyellow;
+        font-size: 1em; }
+      body #main .main_welcome .cookie_content .your_focus span:hover {
         text-decoration: line-through; }
       body #main .main_welcome .content {
         float: left; }
