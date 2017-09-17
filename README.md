@@ -5,8 +5,11 @@ I am in no way affiliated with Momentum and see this project as part of my learn
 
 
 ### Image 09-09-2017
-#### Welcome screen
-<img src="https://i.imgur.com/XFIf1XB.jpg">
+#### Welcome
+<img src="https://i.imgur.com/PhkRJkV.jpg">
 
-#### Today's focus screen
-<img src="https://i.imgur.com/0JnpWA3.jpg">
+#### Set your focus for today
+<img src="https://imgur.com/dUt0rYG.jpg">
+
+#### Your focus for today
+<img src="https://imgur.com/7AUSkGK.jpg">
