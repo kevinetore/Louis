@@ -51,19 +51,21 @@ body {
       font-size: 5.5em;
       text-align: center;
       .cookie_content {
-        .cookie_welcome {
+        #name {
+          color: yellow;
         }
         .focus_today {
           position: absolute;
           left: 0;
           right: 0;
           margin-left: auto;
-          margin: 10% auto auto auto;
+          margin: 5% auto auto auto;
           p {
             font-size: 0.4em;
             input {
               font-size: 1em;
               width: 30%;
+              border-color: yellow;
             }
           }
         }

@@ -49,17 +49,20 @@ body {
       font-weight: 400;
       font-size: 5.5em;
       text-align: center; }
+      body #main .main_welcome .cookie_content #name {
+        color: yellow; }
       body #main .main_welcome .cookie_content .focus_today {
         position: absolute;
         left: 0;
         right: 0;
         margin-left: auto;
-        margin: 10% auto auto auto; }
+        margin: 5% auto auto auto; }
         body #main .main_welcome .cookie_content .focus_today p {
           font-size: 0.4em; }
           body #main .main_welcome .cookie_content .focus_today p input {
             font-size: 1em;
-            width: 30%; }
+            width: 30%;
+            border-color: yellow; }
       body #main .main_welcome .cookie_content .your_focus {
         font-size: 0.4em;
         text-transform: capitalize; }
